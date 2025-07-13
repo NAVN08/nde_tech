@@ -1,0 +1,40 @@
+{% load static %}
+{% include 'home/header.html' %}
+
+<!-- Banner -->
+<div class="page-title" style="background-image: url('https://ndetech.org.in/admin/images/banner/1624627475_product.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Category</h1>
+        <h5 style="color:#fff;">
+          <a href="/">Home</a> » <span>Products</span>
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sub_category -->
+{% block content %}
+<div class="container" style="margin-top: 40px; margin-bottom: 60px;">
+  <div class="row justify-content-center">
+    {% for sub in subcategories %}
+    <div class="col-md-4 col-sm-6 mb-4">
+      <div class="card h-100 shadow rounded p-3">
+        <h5 class="text-center font-weight-bold mb-2">{{ sub.title|upper }}</h5>
+        <img src="{{ sub.image.url }}" class="card-img-top mb-2" alt="{{ sub.title }}" style="height: 200px; object-fit: contain;">
+        <div class="card-body">
+          <p class="card-text" style="height: 120px; overflow-y: auto;">{{ sub.description }}</p>
+          <div class="d-flex justify-content-center mt-3">
+            <a href="#" class="btn btn-warning">View Product</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% include 'home/footer.html' %}

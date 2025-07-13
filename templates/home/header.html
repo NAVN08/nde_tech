@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="https://www.ndetech.org.in/images/favicologo.jpg" rel="icon" type="image/png"/>
+  <title>
+  </title> 
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="" name="description"/>
+  <meta content="" name="keywords"/>
+  <link href="{% static 'images/favicologo.jpg' %}" rel="icon" type="image/png"/>
+  <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/icofont.css'%}" rel="stylesheet"/>
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/fancybox.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/venobox.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/animate.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/media.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/jquery-picZoomer.css' %}" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.theme.default.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" rel="stylesheet"/>
+ </head>
+ <body>
+    
+  <!-- HEADER -->
+  <div class="top_menu">
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="top_menu_right">
+       <ul>
+        <li>
+         <a href="#">
+          <img src="{% static 'images/help.svg' %}" />
+          +91-6379000893
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          <img src="{% static 'images/mail.svg' %}" />
+          support@ndetech.org.in
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="showup">
+   <form action="#" class="form-inline my-2 my-lg-0" method="post">
+    <div class="input-group">
+     <input class="form-control" name="search" placeholder="Search" required="required" type="text"/>
+     <div class="input-group-append">
+      <button class="btn btn-secondary" type="submit">
+       Track
+      </button>
+     </div>
+    </div>
+   </form>
+   <div class="showupa">
+    <p>
+     <i class="icofont-question-circle">
+     </i>
+     No tracking number?
+    </p>
+    <ul>
+     <li>
+      <a href="#">
+       If you have ordered shipping reference numbers...
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       View all Tracking FAQ's
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="showup-search">
+   <form action="#" method="post">
+    <div class="input-group">
+     <input class="form-control" name="search" placeholder="Search" required="required" type="text"/>
+     <div class="input-group-append">
+      <button class="btn btn-secondary" type="submit">
+       <i class="icofont-search">
+       </i>
+      </button>
+     </div>
+    </div>
+   </form>
+  </div>
+  <div class="middle_menu">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12">
+      <div class="logos">
+       <a href="#">
+        <img src="{% static 'images/logo-header-1.png' %}" />
+
+       </a>
+      </div>
+     </div>
+     <div class="col-lg-9 col-md-9 col-sm-10 col-xs-12">
+      <div class="main_menu">
+       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">
+         Menu
+        </a>
+        <button class="navbar-toggler" data-target="#collapsibleNavbar" data-toggle="collapse" type="button">
+         <span class="navbar-toggler-icon">
+         </span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+           <a class="nav-link" href="{% url 'index' %}">
+            Home
+           </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'category' %}">
+              Products
+            </a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" href="#">
+            Services
+           </a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" href="#">
+            Articles
+           </a>
+          </li>
+          <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbardrop">
+            Resources
+           </a>
+           <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">
+             Privacy Policy
+            </a>
+            <a class="dropdown-item" href="#">
+             Downloads Brochure
+            </a>
+            <a class="dropdown-item" href="#">
+             Video Gallery
+            </a>
+            <a class="dropdown-item" href="#">
+             Shipping
+            </a>
+            <a class="dropdown-item" href="#">
+             Return Policy
+            </a>
+            <a class="dropdown-item" href="#">
+             Verify Certificate
+            </a>
+           </div>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" href="#">
+            Contact Us
+           </a>
+          </li>
+         </ul>
+        </div>
+       </nav>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+</body>
+</html>
