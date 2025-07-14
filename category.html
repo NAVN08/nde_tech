@@ -1,0 +1,46 @@
+{% load static %}
+
+{% include 'home/header.html' %}
+      <!-- Banner -->
+ <div class="page-title" style="background-image: url('https://ndetech.org.in/admin/images/banner/1624627475_product.jpg')">
+   <div class="container">
+      <h1>Category</h1>
+      <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+         <ol class="breadcrumb justify-content-center bg-transparent">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>                                                                                                                                                                                                                                                                                                                                                                         -->
+            <li class="breadcrumb-item active" aria-current="page">Products</li>
+         </ol>
+      </nav>
+   </div>
+</div>
+
+<!-- Product List -->
+<div class="main_products py-5" style="background-color: #002D62;">
+   <div class="container">
+      <div class="row">
+         {% for cat in categories %}
+         <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+            <div class="p-3 bg-white rounded shadow-sm h-100">
+               <h5 class="fw-bold text-uppercase">{{ cat.title }}</h5>
+               <div class="row align-items-center">
+                  <div class="col-md-4 text-center">
+                     {% if cat.image %}
+                        <img src="{{ cat.image.url }}" alt="{{ cat.title }}" class="img-fluid">
+                     {% else %}
+                        <img src="{% static 'images/no-image.png' %}" class="img-fluid" alt="No image">
+                     {% endif %}
+                  </div>
+                  <div class="col-md-8">
+                      <p class="small">{{ cat.description|truncatewords:40 }}</p>
+                     <a href="{% url 'subcategory' cat.id %}" class="btn btn-warning btn-sm">View Products</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+</div>
+  {% include 'home/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,125 @@
+{% load static %}
+
+{% include 'home/header.html' %}
+
+    <!-- Banner -->
+    <div class="page-title" style="background-image: url(https://ndetech.org.in/admin/images/banner/1624627475_product.jpg)">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1>Category</h1>
+            <!-- <h5 style="color:#fff;"> <a href="https://ndetech.org.in/">Home</a> » <span>Products</span> </h5> -->
+            <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+              <ol class="breadcrumb justify-content-center bg-transparent">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'category' %}">Products</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'subcategory' product.subcategory.category.id %}">{{ product.subcategory.category.title}}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'product' product.subcategory.id %}">{{ product.subcategory.title}}</a></li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -->
+                <li class="breadcrumb-item active" aria-current="page">{{ product}}</li>
+              </ol>
+            </nav>
+
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- <style>
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+.card-title {
+  min-height: 48px;
+}
+</style>     -->
+{% block content %}
+
+<div class="main_products_desc">
+  <div class="container mt-4">
+      <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-12">
+            <div class="main_products_desc_left">
+
+            <img src="{{ product.image.url }}" class="img-fluid mb-3 border rounded shadow">
+
+          </div>
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-12">
+        
+            <h4 class="fw-bold text-primary">{{ product.title }}</h4>
+            <!-- <p><strong>Price:</strong> ${{ product.price }}</p> -->
+            <p><strong>Part Number:</strong> {{ product.part_number }}</p>
+            <p><strong>Availability:</strong> {{ product.availability }}</p>
+
+            <hr>
+            <h5 class="mt-4 text-info">Description</h5>
+            <p>{{ product.description|linebreaks }}</p>
+            <!-- <div style="line-height: 1.7;">{{ product.description|linebreaks }}</div> -->
+            <h4 class="fw-bold text-primary mt-5">Related Products</h4>
+            <div id="relatedCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+
+                {% for product in related_products %}
+                  {% if forloop.counter0|divisibleby:3 %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                      <div class="row text-center">
+                  {% endif %}
+
+                  <div class="col-md-4">
+                    <div class="card border-0 h-100 shadow-sm">
+                      <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.title }}">
+                      <div class="card-body">
+                        <h6 class="card-title">{{ product.title|truncatechars:40 }}</h6>
+                        <a href="{% url 'product_detail' product.pk %}" class="btn btn-link text-warning">Read more <i class="bi bi-plus-lg"></i></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {% if forloop.counter|divisibleby:3 or forloop.last %}
+                      </div> <!-- end .row -->
+                    </div> <!-- end .carousel-item -->
+                  {% endif %}
+                {% endfor %}
+
+              </div>
+
+              {% if related_products|length > 3 %}
+              <button class="carousel-control-prev" type="button" data-bs-target="#relatedCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#relatedCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+              </button>
+              {% endif %}
+</div>
+
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- <h4 class="mt-5 fw-bold">Related Products</h4>
+<div class="row">
+  {% for item in related_products %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.title|truncatechars:40 }}</h5>
+          <a href="{% url 'product_detail' item.pk %}" class="btn btn-sm btn-outline-primary">View Product</a>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p class="text-muted">No related products found.</p>
+  {% endfor %}
+</div>
+<!-- <p>Related Tag: {{ product.related_tag }}</p>
+<p>Related Count: {{ related_products|length }}</p> -->
+
+{% endblock %} -->
+
+ {% include 'home/footer.html' %}
+</body>
+</html>
