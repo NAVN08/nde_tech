@@ -5,7 +5,12 @@
  <div class="page-title" style="background-image: url('https://ndetech.org.in/admin/images/banner/1624627475_product.jpg')">
    <div class="container">
       <h1>Category</h1>
-      <h5 style="color:#fff;"> <a href="{% url 'category' %}">Home</a> » <span>Products</span> </h5>
+      <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+         <ol class="breadcrumb justify-content-center bg-transparent">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>                                                                                                                                                                                                                                                                                                                                                                         -->
+            <li class="breadcrumb-item active" aria-current="page">Products</li>
+         </ol>
+      </nav>
    </div>
 </div>
 
@@ -26,7 +31,7 @@
                      {% endif %}
                   </div>
                   <div class="col-md-8">
-                     <p class="small">{{ cat.description|truncatewords:40 }}</p>
+                      <p class="small">{{ cat.description|truncatewords:40 }}</p>
                      <a href="{% url 'subcategory' cat.id %}" class="btn btn-warning btn-sm">View Products</a>
                   </div>
                </div>
